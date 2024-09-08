@@ -5,7 +5,7 @@ let intervalId;
 let isTimerRunning = false; 
 
 document.getElementById('backButton').addEventListener('click', function () {
-    window.location.href = './first.html'; // ניתוב לעמוד הראשי
+    window.location.href = './index.html'; // ניתוב לעמוד הראשי
 });
 function placePlayerOnStartingCell(playerDiv) {
     const startingCell = document.querySelector(`#cell-1`);
@@ -103,10 +103,10 @@ function startTimer(duration, display) {
 
         if ((timer -= 10) < 0) {
             clearInterval(intervalId);
-            display.textContent = "2:00:000";
+            display.textContent = "1:00:000";
 
             openAlertModal("Time is up!");
-            isTimerRunning = true;
+            isTimerRunning = false;
 
             timer = duration * 1000;
 
@@ -126,14 +126,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const players = JSON.parse(localStorage.getItem('players'));
 
     if (players && players.length > 0) {
-        let playerOrderMessage = "The order of players is:\n";
+        let playerOrderMessage = "The order of players is:<br>";
 
         players.forEach((player, index) => {
-            playerOrderMessage += `${index + 1}. ${player.name}\n`;
+            playerOrderMessage += `${player.name}<span style="margin-left: 0px;"></span><br>`;
         });
 
-        openAlertModal(playerOrderMessage);
-    } else {
+        const playerOrderElement = document.getElementById('player-order-message');
+        playerOrderElement.innerHTML = playerOrderMessage;
+        } else {
         console.error('לא נמצאו שחקנים ב-localStorage.');
     }
 
