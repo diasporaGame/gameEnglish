@@ -43,7 +43,15 @@ body {
     align-items: center;
     gap: 10px;
 }
-
+.timer-press {
+    font-family: 'Cambria';
+    font-size: large;
+    background-color: #bae792;
+    /* cursor: pointer; */
+    position: absolute; 
+    top: 85px; 
+    right: 30px; 
+}
 .timer {
     font-size: 24px;
     font-weight: bold;
