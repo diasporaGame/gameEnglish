@@ -22,6 +22,18 @@ body {
     z-index: 200;
 
 }
+#reset{
+    display: flex;
+    flex-wrap: wrap;
+    top: 5%;
+    right: 16%;
+    border: solid,1px,#000;
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.2%;
+    z-index: 50;
+}
 #headerr{
     display: flex;
     flex-wrap: wrap;
